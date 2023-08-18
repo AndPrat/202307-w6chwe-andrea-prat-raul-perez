@@ -1,5 +1,5 @@
 const App = (): React.ReactElement => {
-  return <p>Hello world!</p>;
+  return <p>Red Social</p>;
 };
 
 export default App;
