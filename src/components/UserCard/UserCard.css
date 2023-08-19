@@ -1,0 +1,15 @@
+.users__card-container {
+  border: 10px solid #fed132;
+  color: #2e2e2e;
+  -webkit-box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
+  -moz-box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
+  box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
+}
+
+.user__name {
+  padding: 20px;
+}
+
+.user__list {
+  padding: 20px;
+}
