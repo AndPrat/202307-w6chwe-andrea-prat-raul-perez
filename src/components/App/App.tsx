@@ -4,6 +4,7 @@ import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/users/usersSlice";
 import Header from "../Header/Header";
 import UsersList from "../UsersList/UsersList";
+import "./App.css";
 
 const App = (): React.ReactElement => {
   const dispatch = useAppDispatch();
