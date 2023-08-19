@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../store";
 import UserCard from "../UserCard/UserCard";
+import "./UsersList.css";
 
 const UsersList = (): React.ReactElement => {
   const users = useAppSelector(({ usersStore: { users } }) => users);

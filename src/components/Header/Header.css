@@ -5,6 +5,7 @@
   height: 80px;
   gap: 6px;
   border-radius: 50px 50px 13px 13px;
+  margin: 20px;
 }
 
 .main-header__content {
