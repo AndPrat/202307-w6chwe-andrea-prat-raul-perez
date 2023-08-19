@@ -1,4 +1,4 @@
-import { User } from "../../store/types";
+import { User } from "../store/types";
 
 export const usersMock: User[] = [
   {
@@ -23,3 +23,11 @@ export const usersMock: User[] = [
     image: "",
   },
 ];
+
+export const userMock: User = {
+  id: 1,
+  name: "catwoman",
+  isFriend: true,
+  age: 30,
+  image: "",
+};
