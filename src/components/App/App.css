@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+title {
+  text-align: center;
+}
