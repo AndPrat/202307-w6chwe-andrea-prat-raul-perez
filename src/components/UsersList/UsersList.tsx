@@ -2,7 +2,7 @@ import { useAppSelector } from "../../store";
 import UserCard from "../UserCard/UserCard";
 
 const UsersList = (): React.ReactElement => {
-  const users = useAppSelector((state) => state.usersState.users);
+  const users = useAppSelector(({ usersStore: { users } }) => users);
 
   return (
     <ul className="users-list">
