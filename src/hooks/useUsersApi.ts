@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback } from "react";
-import { ApiUser, User } from "../store/types";
+import { ApiUser, User } from "../types";
 
 export const apiUrl = import.meta.env.VITE_API_URL;
 
