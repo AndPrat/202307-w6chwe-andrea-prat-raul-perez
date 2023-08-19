@@ -32,4 +32,7 @@ const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
-export const { loadUsers: loadUsersActionCreator } = usersSlice.actions;
+export const {
+  loadUsers: loadUsersActionCreator,
+  toogleUser: toogleUserActionCreator,
+} = usersSlice.actions;

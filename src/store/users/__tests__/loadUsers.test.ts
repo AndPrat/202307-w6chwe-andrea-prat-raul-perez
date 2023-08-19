@@ -5,7 +5,7 @@ import { UsersState } from "../types";
 import { loadUsersActionCreator, usersReducer } from "../usersSlice";
 
 describe("Given a loadUsers reducer", () => {
-  describe("When it should receives a state and loadUser action with three users 'catwoman', 'jocker' and 'harley quinn'", () => {
+  describe("When it receives an userState and a loadUser action with three users 'catwoman', 'jocker' and 'harley quinn'", () => {
     test("Then it should return a new state with three users 'catwoman', 'jocker' and 'harley quinn'", () => {
       const currentUserState: UsersState = {
         users: [],
