@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useUsersApi from "../../hooks/useUsersApi";
 import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/users/usersSlice";
+import Header from "../Header/Header";
 import UsersList from "../UsersList/UsersList";
 
 const App = (): React.ReactElement => {
@@ -17,9 +18,7 @@ const App = (): React.ReactElement => {
 
   return (
     <div className="container">
-      <header>
-        <h1 className="title">Friends & Foes</h1>
-      </header>
+      <Header />
       <main>
         <UsersList />
       </main>
