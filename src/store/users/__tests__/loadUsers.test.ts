@@ -1,4 +1,4 @@
-import { usersMock } from "../../../components/mocks/usersMock";
+import { usersMock } from "../../../mocks/usersMock";
 import { User } from "../../types";
 import { UsersState } from "../types";
 import { loadUsersActionCreator, usersReducer } from "../usersSlice";
