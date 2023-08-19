@@ -1,4 +1,4 @@
-import { User } from "../../store/types";
+import { User } from "../../types";
 
 export interface UserCardProps {
   user: User;
