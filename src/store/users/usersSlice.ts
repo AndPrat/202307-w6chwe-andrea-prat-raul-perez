@@ -7,7 +7,7 @@ const initialUsersState: UsersState = {
 };
 
 const usersSlice = createSlice({
-  name: "friends",
+  name: "users",
   initialState: initialUsersState,
   reducers: {
     loadUsers: (
@@ -18,7 +18,7 @@ const usersSlice = createSlice({
       users: action.payload,
     }),
 
-    toogleUser: (
+    toggleUser: (
       currentUserState,
       action: PayloadAction<number>,
     ): UsersState => ({
@@ -34,5 +34,5 @@ const usersSlice = createSlice({
 export const usersReducer = usersSlice.reducer;
 export const {
   loadUsers: loadUsersActionCreator,
-  toogleUser: toogleUserActionCreator,
+  toggleUser: toggleUserActionCreator,
 } = usersSlice.actions;
