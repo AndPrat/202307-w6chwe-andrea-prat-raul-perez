@@ -3,6 +3,7 @@ import useUsersApi from "../../hooks/useUsersApi";
 import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/users/usersSlice";
 import Header from "../Header/Header";
+import UsersList from "../UsersList/UsersList";
 
 const App = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -18,6 +19,9 @@ const App = (): React.ReactElement => {
   return (
     <div className="container">
       <Header />
+      <main>
+        <UsersList />
+      </main>
     </div>
   );
 };

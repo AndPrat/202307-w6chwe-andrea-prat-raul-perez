@@ -8,11 +8,11 @@ const UserCard = ({
   user: { name, age, isFriend },
 }: UserCardProps): React.ReactElement => {
   return (
-    <article className="users-card">
-      <h2>{name}</h2>
-      <ul>
-        <li>{age}</li>
-        <li>{isFriend}</li>
+    <article className="users__card-container">
+      <h2 className="user__name">{name}</h2>
+      <ul className="user__list">
+        <li className="user__age">{age}</li>
+        <li className="user__isFriend">{isFriend}</li>
       </ul>
     </article>
   );
