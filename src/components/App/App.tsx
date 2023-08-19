@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useUsersApi from "../../hooks/useUsersApi";
 import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/users/usersSlice";
+import Counter from "../Counter/Counter";
 import Header from "../Header/Header";
 import UsersList from "../UsersList/UsersList";
 import "./App.css";
@@ -21,6 +22,7 @@ const App = (): React.ReactElement => {
     <div className="container">
       <Header />
       <main>
+        <Counter />
         <UsersList />
       </main>
     </div>
