@@ -20,8 +20,8 @@ const UserCard = ({
       <img
         src={picture}
         alt={`${name}'s user ilustration`}
-        width="20"
-        height="26"
+        width="200"
+        height="200"
         className="user__picture"
       />
       <h2>{name}</h2>
