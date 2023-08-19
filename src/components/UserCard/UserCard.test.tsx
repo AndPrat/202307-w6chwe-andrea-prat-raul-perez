@@ -1,16 +1,20 @@
 import { render, screen } from "@testing-library/react";
+
+import { userMock } from "../../mocks/userMocks";
 import UserCard from "./UserCard";
 
 describe("Given a UserCard componente", () => {
-  describe("When is rendered with the character name 'Batman'", () => {
-    test("Then it should return the name Batman inside a heading", () => {
-      const headerText = "Batman";
+  describe("When it receives a user name 'catwoman'", () => {
+    test("Then it should show the name 'catwoman' inside a heading", () => {
+      const expectedHeaderText = "catwoman";
 
-      render(<UserCard />);
+      render(<UserCard user={userMock} />);
 
-      const heading = screen.getByRole("heading", { name: headerText });
+      const userHeading = screen.getByRole("heading", {
+        name: expectedHeaderText,
+      });
 
-      expect(heading).toBeInTheDocument();
+      expect(userHeading).toBeInTheDocument();
     });
   });
 });

@@ -75,3 +75,14 @@ export const usersMock: User[] = [
     favouriteAnimal: "pingüin",
   },
 ];
+
+export const userMock: User = {
+  id: 1,
+  name: "catwoman",
+  isFriend: true,
+  age: 30,
+  picture: "https://pngimg.com/uploads/batman/batman_PNG40.png",
+  zodiacSign: "aries",
+  bestFriend: "",
+  favouriteAnimal: "Cat",
+};
