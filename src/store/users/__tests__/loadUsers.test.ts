@@ -1,5 +1,6 @@
-import { usersMock } from "../../../components/mocks/usersMock";
-import { User } from "../../types";
+import { usersMock } from "../../../mocks/userMocks";
+import { User } from "../../../types";
+
 import { UsersState } from "../types";
 import { loadUsersActionCreator, usersReducer } from "../usersSlice";
 
