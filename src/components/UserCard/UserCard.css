@@ -1,15 +1,29 @@
 .users__card-container {
   border: 10px solid #fed132;
   color: #2e2e2e;
-  -webkit-box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
   -moz-box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
   box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
+  margin: 20px;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  max-width: 414px;
 }
 
 .user__name {
   padding: 20px;
+  text-align: center;
+  flex: 1;
 }
 
 .user__list {
-  padding: 20px;
+  padding: 10px;
+}
+
+.user__picture {
+  min-height: 242px;
+}
+
+.user__data {
+  padding: 5px;
 }

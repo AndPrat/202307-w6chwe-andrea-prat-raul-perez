@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import { userMock } from "../../mocks/userMocks";
 import UserCard from "./UserCard";
 
