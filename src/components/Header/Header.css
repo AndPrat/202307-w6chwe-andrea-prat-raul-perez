@@ -1,7 +1,7 @@
 .main-header {
   display: flex;
   flex-direction: column;
-  width: 480px;
+  width: 580px;
   height: 80px;
   gap: 6px;
   border-radius: 50px 50px 13px 13px;
@@ -12,10 +12,12 @@
   display: flex;
   align-items: center;
   padding: 4px 40px 4px 34px;
-  gap: 26px;
+  gap: 16px;
 }
 
 .main-header__title {
   font-family: "bangers", system-ui;
   font-size: 3rem;
+  letter-spacing: 6px;
+  color: #2e2e2e;
 }
