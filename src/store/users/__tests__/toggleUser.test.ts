@@ -1,6 +1,6 @@
 import { usersMock } from "../../../mocks/userMocks";
 import { UsersState } from "../types";
-import { toogleUserActionCreator, usersReducer } from "../usersSlice";
+import { toggleUserActionCreator, usersReducer } from "../usersSlice";
 
 describe("Given a toogleUser reducer", () => {
   describe("When it receives an userState and a toogleUser action with the number 1", () => {
@@ -10,7 +10,7 @@ describe("Given a toogleUser reducer", () => {
       };
       const characterId = 1;
 
-      const togleUserAction = toogleUserActionCreator(characterId);
+      const togleUserAction = toggleUserActionCreator(characterId);
       const newUserState = usersReducer(currentUserState, togleUserAction);
 
       const usertoTogle = newUserState.users[0];

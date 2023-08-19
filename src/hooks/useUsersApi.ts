@@ -9,14 +9,23 @@ const useUsersApi = () => {
     const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}/users`);
 
     const users = apiUsers.map<User>(
-      ({ id, name, age, favouritePet, image, isFriend, zodiacSign }) => ({
+      ({
+        id,
+        name,
+        age,
+        favouritePet,
+        image,
+        isFriend,
+        zodiacSign,
+        favouriteDrink,
+      }) => ({
         id,
         name,
         age,
         picture: image,
         isFriend,
         zodiacSign,
-        bestFriend: "",
+        favouriteDrink,
         favouriteAnimal: favouritePet,
       }),
     );

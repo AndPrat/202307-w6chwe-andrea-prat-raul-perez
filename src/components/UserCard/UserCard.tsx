@@ -1,38 +1,58 @@
+import { useAppDispatch } from "../../store";
+import { toggleUserActionCreator } from "../../store/users/usersSlice";
 import { User } from "../../types";
+import Button from "../Button/Button";
 import "./UserCard.css";
-
 export interface UserCardProps {
   user: User;
 }
 
 const UserCard = ({
   user: {
+    id,
     name,
     age,
     zodiacSign,
     favouriteAnimal,
-    bestFriend,
+    favouriteDrink,
     isFriend,
     picture,
   },
 }: UserCardProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+
+  const toggleUser = (id: number) => {
+    dispatch(toggleUserActionCreator(id));
+  };
+
   return (
-    <article className="users__card-container">
+    <article
+      className={
+        isFriend
+          ? "user__card-container--friend "
+          : "user__card-container--foe "
+      }
+    >
       <img
         src={picture}
-        alt={`${name}'s user ilustration`}
-        width="300"
-        height="300"
+        alt={`of ${name}`}
+        width="200"
+        height="200"
         className="user__picture"
       />
       <h2 className="user__name">{name}</h2>
       <ul className="user__list">
         <li className="user__data">{isFriend}</li>
         <li className="user__data">Age: {age}</li>
-        <li className="user__data">Zodiac sign: {zodiacSign}</li>
-        <li className="user__data">Fav animal: {favouriteAnimal}</li>
-        <li className="user__data">Bf: {bestFriend}</li>
+        <li className="user__data">Zodiac: {zodiacSign}</li>
+        <li className="user__data">Loves pet: {favouriteAnimal}</li>
+        <li className="user__data">Drinks: {favouriteDrink}</li>
       </ul>
+      <Button
+        text={isFriend ? "Turn to enemy" : "Turn to friend"}
+        className="toggle-button"
+        actionOnClick={() => toggleUser(id)}
+      />
     </article>
   );
 };

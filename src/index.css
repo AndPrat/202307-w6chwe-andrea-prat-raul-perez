@@ -22,10 +22,7 @@ li {
 input,
 button {
   font-family: inherit;
-}
-
-button {
-  border: none;
+  border: solid black 1px;
   background-color: transparent;
   cursor: pointer;
 }

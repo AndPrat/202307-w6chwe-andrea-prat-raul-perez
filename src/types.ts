@@ -14,9 +14,9 @@ export interface ApiUser {
 export interface User
   extends Omit<
     ApiUser,
-    "image" | "vehicle" | "favouriteDrink" | "alternativeText" | "favouritePet"
+    "image" | "vehicle" | "alternativeText" | "favouritePet"
   > {
   picture: string;
-  bestFriend: string;
+  favouriteDrink: string;
   favouriteAnimal: string;
 }

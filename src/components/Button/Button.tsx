@@ -12,7 +12,7 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`button${className ? `${className}` : ""}`}
+      className={`button ${className ? `${className}` : ""}`}
       onClick={actionOnClick}
     >
       {text}

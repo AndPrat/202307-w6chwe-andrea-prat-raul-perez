@@ -1,4 +1,4 @@
-.users__card-container {
+.user__card-container--friend {
   border: 10px solid #fed132;
   color: #2e2e2e;
   -moz-box-shadow: 10px 10px 0px 3px rgba(21, 76, 241, 1);
@@ -8,16 +8,36 @@
   justify-items: center;
   flex-direction: column;
   max-width: 414px;
+  gap: 8px;
+}
+
+.user__card-container--foe {
+  border: 10px solid #ff0000;
+  color: #2e2e2e;
+  -moz-box-shadow: 10px 10px 0px 3px #1c0b3c;
+  box-shadow: 10px 10px 0px 3px #1c0b3c;
+  margin: 20px;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  max-width: 414px;
+  gap: 8px;
 }
 
 .user__name {
-  padding: 20px;
+  padding: 12px;
+  letter-spacing: 3px;
+  font-size: 2rem;
   text-align: center;
   flex: 1;
+  font-family: "bangers", system-ui;
 }
 
 .user__list {
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .user__picture {
@@ -25,5 +45,13 @@
 }
 
 .user__data {
-  padding: 5px;
+}
+
+.toggle-button {
+  border: solid 2px #2e2e2e;
+  padding: 8px;
+  font-size: 1.6rem;
+  width: auto;
+  margin: 16px;
+  font-family: "bangers", system-ui;
 }
