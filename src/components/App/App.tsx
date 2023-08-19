@@ -1,29 +1,20 @@
-import { useEffect } from "react";
-import useUsersApi from "../../hooks/useUsersApi";
-import { useAppDispatch } from "../../store";
-import { loadUsersActionCreator } from "../../store/users/usersSlice";
+import { Navigate, Route, Routes } from "react-router-dom";
+import UsersListPage from "../../pages/UsersListPage/UsersListPage";
+import paths from "../../paths/paths";
 import Counter from "../Counter/Counter";
 import Header from "../Header/Header";
-import UsersList from "../UsersList/UsersList";
 import "./App.css";
 
 const App = (): React.ReactElement => {
-  const dispatch = useAppDispatch();
-  const { getUsers } = useUsersApi();
-
-  useEffect(() => {
-    (async () => {
-      const users = await getUsers();
-      dispatch(loadUsersActionCreator(users));
-    })();
-  }, [dispatch, getUsers]);
-
   return (
     <div className="container">
       <Header />
-      <main>
+      <main className="main-content">
         <Counter />
-        <UsersList />
+        <Routes>
+          <Route path={paths.users} element={<UsersListPage />}></Route>
+          <Route path="/" element={<Navigate to={paths.users} />} />
+        </Routes>
       </main>
     </div>
   );
