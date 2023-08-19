@@ -9,7 +9,7 @@ describe("Given an UsersList component", () => {
   describe("When is rendered with 'catwoman', 'jocker' and 'harley quinn' users card", () => {
     test("Then it should show the users 'catwoman', 'jocker' and 'harley quinn' inside heading", () => {
       const store = setupStore({
-        usersState: {
+        usersStore: {
           users: usersMock,
         },
       });

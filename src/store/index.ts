@@ -7,7 +7,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { usersReducer } from "./users/usersSlice";
 
 const rootReducer = combineReducers({
-  usersState: usersReducer,
+  usersStore: usersReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
