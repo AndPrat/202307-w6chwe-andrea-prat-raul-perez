@@ -29,6 +29,5 @@
   display: flex;
   justify-content: center;
   margin: 32px;
-  font-size: 2rem;
-  transform: scale(2);
+  transform: scale(1.2);
 }

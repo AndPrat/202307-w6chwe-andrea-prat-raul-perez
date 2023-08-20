@@ -126,7 +126,7 @@ const NewUser = () => {
       </div>
       <div className="form-user__button btn">
         <button disabled={disabled} type="submit">
-          Add Friend
+          Add Friend (or foe)
         </button>
       </div>
     </form>
