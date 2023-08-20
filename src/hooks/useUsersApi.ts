@@ -50,7 +50,7 @@ const useUsersApi = () => {
     }
   }, [dispatch]);
 
-  const toggleFriendUser = async (userToUpdate: User): Promise<User> => {
+  const toggleUser = async (userToUpdate: User): Promise<User> => {
     const updatedUser = {
       ...userToUpdate,
       image: userToUpdate.picture,
@@ -70,7 +70,7 @@ const useUsersApi = () => {
 
   return {
     getUsers,
-    toggleFriendUser,
+    toggleFriendUser: toggleUser,
   };
 };
 

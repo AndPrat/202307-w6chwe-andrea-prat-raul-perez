@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import NewUserPage from "../../pages/UsersListPage/NewUserPage/NewUserPage";
 import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import paths from "../../paths/paths";
 import { useAppSelector } from "../../store";
@@ -21,8 +22,10 @@ const App = (): React.ReactElement => {
         <main className="main-content">
           <Counter />
           <Routes>
-            <Route path={paths.users} element={<UsersListPage />}></Route>
+            <Route path={paths.users} element={<UsersListPage />} />
             <Route path="/" element={<Navigate to={paths.users} />} />
+            <Route path="/home" element={<Navigate to={paths.users} />} />
+            <Route path={paths.newUser} element={<NewUserPage />} />
           </Routes>
         </main>
       </div>
