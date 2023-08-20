@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useCallback } from "react";
 import { useAppDispatch } from "../store";
-import { startLoadingActionCreator } from "../store/ui/uiSlice";
+import {
+  startLoadingActionCreator,
+  stopLoadingActionCreator,
+} from "../store/ui/uiSlice";
 import { ApiUser, User } from "../types";
 
 export const apiUrl = import.meta.env.VITE_API_URL;
@@ -37,8 +40,10 @@ const useUsersApi = () => {
         }),
       );
 
+      dispatch(stopLoadingActionCreator());
       return users;
     } catch {
+      dispatch(stopLoadingActionCreator());
       throw new Error("Can't get user right now!");
     }
   }, [dispatch]);
