@@ -20,3 +20,5 @@ export interface User
   favouriteDrink: string;
   favouriteAnimal: string;
 }
+
+export type UserData = Omit<User, "id">;
