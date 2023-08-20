@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { Provider } from "react-redux";
 import { errorHandlers } from "../../mocks/handlers";
 import { server } from "../../mocks/serve";
