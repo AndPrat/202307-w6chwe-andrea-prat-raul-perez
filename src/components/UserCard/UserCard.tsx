@@ -1,3 +1,4 @@
+import useUsersApi from "../../hooks/useUsersApi";
 import { useAppDispatch } from "../../store";
 import { toggleUserActionCreator } from "../../store/users/usersSlice";
 import { User } from "../../types";
@@ -18,11 +19,14 @@ const UserCard = ({
     isFriend,
     picture,
   },
+  user,
 }: UserCardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
+  const { toggleFriendUser } = useUsersApi();
 
-  const toggleUser = (id: number) => {
+  const toggleUser = (id: number, user: User) => {
     dispatch(toggleUserActionCreator(id));
+    toggleFriendUser(user);
   };
 
   return (
@@ -45,13 +49,13 @@ const UserCard = ({
         <li className="user__data">{isFriend}</li>
         <li className="user__data">Age: {age}</li>
         <li className="user__data">Zodiac: {zodiacSign}</li>
-        <li className="user__data">Loves pet: {favouriteAnimal}</li>
+        <li className="user__data">Loves animal: {favouriteAnimal}</li>
         <li className="user__data">Drinks: {favouriteDrink}</li>
       </ul>
       <Button
         text={isFriend ? "Turn to enemy" : "Turn to friend"}
         className="toggle-button"
-        actionOnClick={() => toggleUser(id)}
+        actionOnClick={() => toggleUser(id, user)}
       />
     </article>
   );
