@@ -9,6 +9,8 @@
   flex-direction: column;
   max-width: 414px;
   gap: 8px;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
 
 .user__card-container--foe {
@@ -21,6 +23,8 @@
   flex-direction: column;
   max-width: 414px;
   gap: 8px;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
 
 .user__name {
@@ -33,14 +37,21 @@
 }
 
 .user__list {
-  padding: 0px 10px 10px 10px;
+  padding: 0px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 .user__picture {
+  display: flex;
+  justify-content: center;
+}
+
+.user__image {
   min-height: 242px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .toggle-button {
