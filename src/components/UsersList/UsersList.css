@@ -2,9 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   padding: 20px;
   gap: 10px;
+}
+
+.user-list__item {
+  width: 100%;
+  padding: 0 12px;
+  margin-bottom: 24px;
 }
 
 @media screen and (min-width: 768px) {
