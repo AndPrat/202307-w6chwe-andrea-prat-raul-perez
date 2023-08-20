@@ -54,8 +54,23 @@ const useUsersApi = () => {
     }
   }, [dispatch]);
 
+  const toggleFriendUser = async (friendToUpdate: ApiUser): Promise<User> => {
+    const user: ApiUser = {
+      ...friendToUpdate,
+      isFriend: !friendToUpdate.isFriend,
+    };
+
+    const { data: isFriendUser } = await axios.put<User>(
+      `${apiUrl}/${friendToUpdate.id}`,
+      user,
+    );
+
+    return isFriendUser;
+  };
+
   return {
     getUsers,
+    toggleFriendUser,
   };
 };
 
