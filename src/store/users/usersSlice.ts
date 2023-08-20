@@ -40,4 +40,5 @@ export const usersReducer = usersSlice.reducer;
 export const {
   loadUsers: loadUsersActionCreator,
   toggleUser: toggleUserActionCreator,
+  addUser: addUseractionCreator,
 } = usersSlice.actions;
