@@ -11,8 +11,13 @@ export interface ApiUser {
   vehicle: string;
 }
 
-export interface User extends Omit<ApiUser, "image" | "favouritePet"> {
+export interface User
+  extends Omit<
+    ApiUser,
+    "image" | "vehicle" | "alternativeText" | "favouritePet"
+  > {
   picture: string;
+  favouriteDrink: string;
   favouriteAnimal: string;
 }
 

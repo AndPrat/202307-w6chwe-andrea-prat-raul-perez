@@ -32,15 +32,15 @@ const NewUser = () => {
         <input type="text" id="animal" value={newUser.favouriteAnimal} />
       </div>
       <div className="form-control">
-        <label htmlFor="drink">Drinks:</label>
+        <label htmlFor="drink">Favourite Drink:</label>
         <input type="text" id="drink" value={newUser.favouriteDrink} />
       </div>
       <div className="form-control-check">
         <label htmlFor="friend">Is Friend?</label>
-        <input type="checkbox" id="drink" />
+        <input type="checkbox" id="friend" />
       </div>
       <div className="form-control">
-        <label htmlFor="image">Image:</label>
+        <label htmlFor="image">Image URL:</label>
         <input type="text" id="image" value={newUser.picture} />
       </div>
     </form>
