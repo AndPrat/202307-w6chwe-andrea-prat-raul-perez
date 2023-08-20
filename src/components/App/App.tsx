@@ -1,31 +1,32 @@
-import { useEffect } from "react";
-import useUsersApi from "../../hooks/useUsersApi";
-import { useAppDispatch } from "../../store";
-import { loadUsersActionCreator } from "../../store/users/usersSlice";
+import { Navigate, Route, Routes } from "react-router-dom";
+import UsersListPage from "../../pages/UsersListPage/UsersListPage";
+import paths from "../../paths/paths";
+import { useAppSelector } from "../../store";
 import Counter from "../Counter/Counter";
+import ErrorFeedback from "../ErrorFeedback/ErrorFeedback";
 import Header from "../Header/Header";
-import UsersList from "../UsersList/UsersList";
+import Loader from "../Loader/Loader";
 import "./App.css";
 
 const App = (): React.ReactElement => {
-  const dispatch = useAppDispatch();
-  const { getUsers } = useUsersApi();
-
-  useEffect(() => {
-    (async () => {
-      const users = await getUsers();
-      dispatch(loadUsersActionCreator(users));
-    })();
-  }, [dispatch, getUsers]);
+  const isLoading = useAppSelector((state) => state.uiStore.isLoading);
+  const isError = useAppSelector((state) => state.uiStore.isError);
 
   return (
-    <div className="container">
-      <Header />
-      <main>
-        <Counter />
-        <UsersList />
-      </main>
-    </div>
+    <>
+      {isLoading && <Loader />}
+      {isError && <ErrorFeedback />}
+      <div className="container">
+        <Header />
+        <main className="main-content">
+          <Counter />
+          <Routes>
+            <Route path={paths.users} element={<UsersListPage />}></Route>
+            <Route path="/" element={<Navigate to={paths.users} />} />
+          </Routes>
+        </main>
+      </div>
+    </>
   );
 };
 

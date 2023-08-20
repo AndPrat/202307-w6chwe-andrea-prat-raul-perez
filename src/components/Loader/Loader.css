@@ -1,0 +1,29 @@
+.loading {
+  position: fixed;
+  z-index: 999;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 104.8px;
+  height: 104.8px;
+  animation: spinner-98imc8 1.6s infinite linear;
+  background-color: #5188e4c4;
+  border-radius: 50%;
+}
+
+@keyframes spinner-98imc8 {
+  0% {
+    transform: scale(0) rotate(-45deg) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.25) rotate(960deg) translateY(100%);
+  }
+
+  100% {
+    transform: scale(0) rotate(2000deg) translateY(0);
+  }
+}
