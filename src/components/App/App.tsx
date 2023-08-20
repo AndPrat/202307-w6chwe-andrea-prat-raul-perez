@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import NewUserPage from "../../pages/UsersListPage/NewUserPage/NewUserPage";
+import NewUserPage from "../../pages/NewUserPage/NewUserPage";
 import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import paths from "../../paths/paths";
 import { useAppSelector } from "../../store";
