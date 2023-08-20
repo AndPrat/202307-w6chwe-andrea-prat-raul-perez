@@ -7,7 +7,6 @@
 }
 
 .user-counter__total {
-  size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
 }
