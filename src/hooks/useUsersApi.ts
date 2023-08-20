@@ -2,7 +2,6 @@ import axios from "axios";
 import { useCallback } from "react";
 import { useAppDispatch } from "../store";
 import {
-  hideErrorActionCreator,
   showErrorActionCreator,
   startLoadingActionCreator,
   stopLoadingActionCreator,
@@ -16,7 +15,7 @@ const useUsersApi = () => {
 
   const getUsers = useCallback(async (): Promise<User[]> => {
     dispatch(startLoadingActionCreator());
-    dispatch(hideErrorActionCreator());
+
     try {
       const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}/users`);
 
