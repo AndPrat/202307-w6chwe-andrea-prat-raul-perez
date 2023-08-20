@@ -8,7 +8,7 @@ const UsersList = (): React.ReactElement => {
   return (
     <ul className="users-list">
       {users.map((user) => (
-        <li key={user.id}>
+        <li key={user.id} className="user-list__item">
           <UserCard user={user} />
         </li>
       ))}
