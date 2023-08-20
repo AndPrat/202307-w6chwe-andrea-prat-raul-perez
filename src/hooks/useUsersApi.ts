@@ -29,6 +29,8 @@ const useUsersApi = () => {
           isFriend,
           zodiacSign,
           favouriteDrink,
+          vehicle,
+          alternativeText,
         }) => ({
           id,
           name,
@@ -38,6 +40,8 @@ const useUsersApi = () => {
           zodiacSign,
           favouriteDrink,
           favouriteAnimal: favouritePet,
+          vehicle,
+          alternativeText,
         }),
       );
 
@@ -50,7 +54,24 @@ const useUsersApi = () => {
     }
   }, [dispatch]);
 
-  return { getUsers };
+  const toggleFriendUser = async (friendToUpdate: ApiUser): Promise<User> => {
+    const user: ApiUser = {
+      ...friendToUpdate,
+      isFriend: !friendToUpdate.isFriend,
+    };
+
+    const { data: isFriendUser } = await axios.put<User>(
+      `${apiUrl}/${friendToUpdate.id}`,
+      user,
+    );
+
+    return isFriendUser;
+  };
+
+  return {
+    getUsers,
+    toggleFriendUser,
+  };
 };
 
 export default useUsersApi;
