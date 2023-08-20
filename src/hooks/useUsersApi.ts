@@ -2,9 +2,9 @@ import axios from "axios";
 import { useCallback } from "react";
 import { ApiUser, User } from "../types";
 
-export const apiUrl = import.meta.env.VITE_API_URL;
-
 const useUsersApi = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const getUsers = useCallback(async (): Promise<User[]> => {
     const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}/users`);
 
@@ -18,6 +18,8 @@ const useUsersApi = () => {
         isFriend,
         zodiacSign,
         favouriteDrink,
+        vehicle,
+        alternativeText,
       }) => ({
         id,
         name,
@@ -27,13 +29,32 @@ const useUsersApi = () => {
         zodiacSign,
         favouriteDrink,
         favouriteAnimal: favouritePet,
+        vehicle,
+        alternativeText,
       }),
     );
 
     return users;
-  }, []);
+  }, [apiUrl]);
 
-  return { getUsers };
+  const toggleFriendUser = async (friendToUpdate: ApiUser): Promise<User> => {
+    const user: ApiUser = {
+      ...friendToUpdate,
+      isFriend: !friendToUpdate.isFriend,
+    };
+
+    const { data: isFriendUser } = await axios.put<User>(
+      `${apiUrl}/${friendToUpdate.id}`,
+      user,
+    );
+
+    return isFriendUser;
+  };
+
+  return {
+    getUsers,
+    toggleFriendUser,
+  };
 };
 
 export default useUsersApi;
