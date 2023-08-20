@@ -37,13 +37,15 @@ const UserCard = ({
           : "user__card-container--foe "
       }
     >
-      <img
-        src={picture}
-        alt={`of ${name}`}
-        width="200"
-        height="200"
-        className="user__picture"
-      />
+      <picture className="user__picture">
+        <img
+          src={picture}
+          alt={`of ${name}`}
+          width="200"
+          height="200"
+          className="user__image"
+        />
+      </picture>
       <h2 className="user__name">{name}</h2>
       <ul className="user__list">
         <li className="user__data">{isFriend}</li>

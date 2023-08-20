@@ -2,8 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 20px;
   gap: 10px;
+}
+
+.user-list__item {
+  width: 100%;
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .user-list__item {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .user-list__item {
+    width: 25%;
+  }
 }
