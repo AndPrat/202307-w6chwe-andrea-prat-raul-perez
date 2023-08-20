@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useUsersApi from "../../hooks/useUsersApi";
 import { useAppDispatch } from "../../store";
 import { addUseractionCreator } from "../../store/users/usersSlice";
 import { UserData } from "../../types";
@@ -6,6 +8,7 @@ import "./NewUser.css";
 
 const NewUser = () => {
   const dispatch = useAppDispatch();
+  const { addUser } = useUsersApi();
 
   const [newUser, setNewUser] = useState<UserData>({
     name: "",
@@ -17,6 +20,37 @@ const NewUser = () => {
     isFriend: false,
   });
 
+  const {
+    age,
+    favouriteAnimal,
+    favouriteDrink,
+    isFriend,
+    name,
+    picture,
+    zodiacSign,
+  } = newUser;
+
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    name !== "" &&
+    picture !== "" &&
+    zodiacSign !== "" &&
+    favouriteDrink !== "" &&
+    favouriteAnimal !== "" &&
+    age != 0
+      ? setDisabled(false)
+      : setDisabled(true);
+  }, [
+    age,
+    favouriteAnimal,
+    favouriteDrink,
+    isFriend,
+    name,
+    picture,
+    zodiacSign,
+  ]);
+
   const changeNewUser = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewUser((newUser) => ({
       ...newUser,
@@ -24,10 +58,15 @@ const NewUser = () => {
     }));
   };
 
+  const navigate = useNavigate();
+
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    dispatch(addUseractionCreator);
+    const user = await addUser(newUser);
+
+    dispatch(addUseractionCreator(user));
+    navigate("/users");
   };
 
   return (
@@ -43,52 +82,52 @@ const NewUser = () => {
       </div>
       <div className="form-control">
         <label htmlFor="age">Age:</label>
-        <input
-          type="text"
-          id="age"
-          value={newUser.age}
-          onChange={changeNewUser}
-        />
+        <input type="number" id="age" onChange={changeNewUser} />
       </div>
       <div className="form-control">
-        <label htmlFor="zodiac">Zodiac:</label>
+        <label htmlFor="zodiacSign">Zodiac:</label>
         <input
           type="text"
-          id="zodiac"
+          id="zodiacSign"
           value={newUser.zodiacSign}
           onChange={changeNewUser}
         />
       </div>
       <div className="form-control">
-        <label htmlFor="animal">Favourite Animal:</label>
+        <label htmlFor="favouriteAnimal">Favourite Animal:</label>
         <input
           type="text"
-          id="animal"
+          id="favouriteAnimal"
           value={newUser.favouriteAnimal}
           onChange={changeNewUser}
         />
       </div>
       <div className="form-control">
-        <label htmlFor="drink">Favourite Drink:</label>
+        <label htmlFor="favouriteDrink">Favourite Drink:</label>
         <input
           type="text"
-          id="drink"
+          id="favouriteDrink"
           value={newUser.favouriteDrink}
           onChange={changeNewUser}
         />
       </div>
-      <div className="form-control-check">
-        <label htmlFor="friend">Is Friend?</label>
-        <input type="checkbox" id="friend" />
-      </div>
       <div className="form-control">
-        <label htmlFor="image">Image URL:</label>
+        <label htmlFor="picture">Image URL:</label>
         <input
           type="text"
-          id="image"
+          id="picture"
           value={newUser.picture}
           onChange={changeNewUser}
         />
+      </div>
+      <div className="form-control">
+        <label htmlFor="isFriend">Is Friend?</label>
+        <input className="form-control-check" type="checkbox" id="isFriend" />
+      </div>
+      <div className="form-user__button btn">
+        <button disabled={disabled} type="submit">
+          Add Friend
+        </button>
       </div>
     </form>
   );

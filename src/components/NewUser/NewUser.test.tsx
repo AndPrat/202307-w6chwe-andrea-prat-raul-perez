@@ -1,9 +1,18 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { usersMock } from "../../mocks/userMocks";
+import { setupStore } from "../../store";
 import NewUser from "./NewUser";
 
 describe("Given a NewUser component", () => {
   describe("When it's rendered", () => {
     test("Then it should show the fields:'Name:','Age:','zodiac:','Favourite Animal:', 'Favourite Drink:', 'Is friend?'and 'Image URL:' ", () => {
+      const store = setupStore({
+        usersStore: {
+          users: usersMock,
+        },
+      });
       const nameInputLabelText = "Name:";
       const ageInputLabelText = "Age:";
       const zodiacInputLabelText = "Zodiac:";
@@ -12,7 +21,13 @@ describe("Given a NewUser component", () => {
       const isFriendCheckboxLabel = "Is Friend?";
       const imageUrlInputLabel = "Image URL:";
 
-      render(<NewUser></NewUser>);
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <NewUser></NewUser>
+          </Provider>
+        </BrowserRouter>,
+      );
 
       const nameInput = screen.getByLabelText(nameInputLabelText);
       const ageInput = screen.getByLabelText(ageInputLabelText);
