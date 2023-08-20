@@ -2,6 +2,7 @@ import axios from "axios";
 import { useCallback } from "react";
 import { useAppDispatch } from "../store";
 import {
+  showErrorActionCreator,
   startLoadingActionCreator,
   stopLoadingActionCreator,
 } from "../store/ui/uiSlice";
@@ -44,7 +45,8 @@ const useUsersApi = () => {
       return users;
     } catch {
       dispatch(stopLoadingActionCreator());
-      throw new Error("Can't get user right now!");
+      dispatch(showErrorActionCreator());
+      throw new Error("Can't get users right now!");
     }
   }, [dispatch]);
 
