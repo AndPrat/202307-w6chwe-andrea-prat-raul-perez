@@ -1,0 +1,25 @@
+.form-user {
+  width: 70%;
+
+  font-family: monospace;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.form-control-check {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.form-control label {
+  width: 85px;
+}
+
+.form-control input {
+  flex: 1;
+}

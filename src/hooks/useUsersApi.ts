@@ -29,8 +29,6 @@ const useUsersApi = () => {
           isFriend,
           zodiacSign,
           favouriteDrink,
-          vehicle,
-          alternativeText,
         }) => ({
           id,
           name,
@@ -40,8 +38,6 @@ const useUsersApi = () => {
           zodiacSign,
           favouriteDrink,
           favouriteAnimal: favouritePet,
-          vehicle,
-          alternativeText,
         }),
       );
 
