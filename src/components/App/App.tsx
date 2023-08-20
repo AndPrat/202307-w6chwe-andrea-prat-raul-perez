@@ -3,7 +3,7 @@ import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import paths from "../../paths/paths";
 import { useAppSelector } from "../../store";
 import Counter from "../Counter/Counter";
-import Error from "../Error/Error";
+import ErrorFeedback from "../ErrorFeedback/ErrorFeedback";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import "./App.css";
@@ -15,7 +15,7 @@ const App = (): React.ReactElement => {
   return (
     <>
       {isLoading && <Loader />}
-      {isError && <Error />}
+      {isError && <ErrorFeedback />}
       <div className="container">
         <Header />
         <main className="main-content">

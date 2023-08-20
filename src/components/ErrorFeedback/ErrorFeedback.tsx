@@ -1,9 +1,9 @@
 import { useAppDispatch } from "../../store";
 import { hideErrorActionCreator } from "../../store/ui/uiSlice";
 import Button from "../Button/Button";
-import "./Error.css";
+import "./ErrorFeedback.css";
 
-const Error = (): React.ReactElement => {
+const ErrorFeedback = (): React.ReactElement => {
   const dispatch = useAppDispatch();
 
   const closeError = () => {
@@ -12,7 +12,7 @@ const Error = (): React.ReactElement => {
 
   return (
     <div className="error">
-      <span>Something went wrong...</span>
+      <span aria-label="error message">Something went wrong...</span>
       <Button
         className="error-button"
         text="Close"
@@ -22,4 +22,4 @@ const Error = (): React.ReactElement => {
   );
 };
 
-export default Error;
+export default ErrorFeedback;
