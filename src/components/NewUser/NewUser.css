@@ -1,13 +1,17 @@
 .form-user {
-  width: 70%;
   font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-control {
   display: flex;
+  align-items: flex-start;
 
-  align-items: center;
-  margin-bottom: 8px;
+  gap: 6px;
+  padding: 8px;
 }
 
 .form-control-check {
@@ -18,7 +22,15 @@
 }
 
 .form-control label {
-  width: 85px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 116px;
+  background-color: rgb(241, 226, 16);
+  height: 33px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .form-control input {
@@ -30,4 +42,7 @@
   justify-content: center;
   margin: 32px;
   transform: scale(1.2);
+  background-color: #fff;
+  width: fit-content;
+  background-color: #f79e10;
 }
