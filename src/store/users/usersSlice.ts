@@ -28,6 +28,11 @@ const usersSlice = createSlice({
         isFriend: user.id === action.payload ? !user.isFriend : user.isFriend,
       })),
     }),
+
+    addUser: (currentUserState, action: PayloadAction<User>): UsersState => ({
+      ...currentUserState,
+      users: [...currentUserState.users, action.payload],
+    }),
   },
 });
 
@@ -35,4 +40,5 @@ export const usersReducer = usersSlice.reducer;
 export const {
   loadUsers: loadUsersActionCreator,
   toggleUser: toggleUserActionCreator,
+  addUser: addUseractionCreator,
 } = usersSlice.actions;

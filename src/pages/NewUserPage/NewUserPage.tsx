@@ -1,9 +1,10 @@
 import NewUser from "../../components/NewUser/NewUser";
+import "./NewUserPage.css";
 
 const NewUserPage = () => {
   return (
     <>
-      <h2>Add friend, or enemy</h2>
+      <h2 className="page-title">Add friend, or enemy</h2>
       <NewUser />
     </>
   );

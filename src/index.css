@@ -28,7 +28,7 @@ input,
 button {
   font-family: inherit;
   border: solid #2e2e2e 1px;
-  background-color: transparent;
+
   cursor: pointer;
   color: #2e2e2e;
 }
