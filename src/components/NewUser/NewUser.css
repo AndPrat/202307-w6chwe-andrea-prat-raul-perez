@@ -27,14 +27,16 @@
   justify-content: center;
   align-items: center;
   width: 116px;
-  background-color: rgb(241, 226, 16);
+  background-color: #fed132;
   height: 33px;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid black;
+  font-weight: bold;
 }
 
 .form-control input {
   padding: 8px;
+  border-radius: 8px;
 }
 
 .btn {
@@ -44,5 +46,5 @@
   transform: scale(1.2);
   background-color: #fff;
   width: fit-content;
-  background-color: #f79e10;
+  background-color: #fed132;
 }

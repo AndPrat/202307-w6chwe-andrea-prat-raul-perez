@@ -125,7 +125,7 @@ const NewUser = () => {
         <input className="form-control-check" type="checkbox" id="isFriend" />
       </div>
       <div className="form-user__button btn">
-        <button disabled={disabled} type="submit">
+        <button disabled={disabled} type="submit" className="button-">
           Add Friend (or foe)
         </button>
       </div>
